@@ -11,7 +11,7 @@
 </footer>
 {{ template "_internal/google_analytics.html" . }}
 
-<script async src="js/dom.js"></script>
+<script async src="{{ $.Site.BaseURL }}/js/dom.js"></script>
 
 
 {{if .Page.Site.Params.fancybox }}
