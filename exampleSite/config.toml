@@ -1,0 +1,71 @@
+baseurl = "https://localhost/"
+RelativeURLs=true
+CanonifyURLs=true
+# html的lang属性值
+languageCode = "zh-cn"	              
+ # 默认内容语言用于选择i18n语言模板
+DefaultContentLanguage = "zh-cn"   	 
+title = "allposs博客"
+theme = "axis"
+#googleAnalytics = "UA-112592341-1"
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+# .WordCount works correctly for chinese
+hasCJKLanguage = true                             
+enableEmoji = true
+footnotereturnlinkcontents = "↩"
+ # format of a new post
+MetaDataFormat = "yaml"
+enableGitInfo = false
+publishDir = "html"
+disqusShortname = 'allposs'
+
+[[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "文档"
+    url = "/docs/"
+    weight = 2
+
+[[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 3
+
+[[menu.main]]
+    name = "归档"
+    url = "/archives/"
+    weight = 4
+
+[[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 5
+
+[params]
+    # 时间样式
+    dateFormat = "2023-05-17T10:28:31+08:00"
+    github = "https://github.com/allposs/"
+    email = "tanzj520@gmail.com"
+    # 最近更新文章
+    recentPosts = true
+    # fancybox
+    fancybox    = true
+
+    loadTypekit = false	
+    baiduSiteVerificateID = "code-HxM5pCr1nD"   # 百度搜索资源平台HTML标签验证码
+
+# 菜单参数
+[params.menu]
+    title = "个人博客"
+    subtitle = "IT 爱好者"
+    # 菜单名称
+    name = "菜单"
+    logo = "logo.jpeg"
+
+# footer参数
+[params.footer]
+    copyright = ""
+    moreinfo = ""

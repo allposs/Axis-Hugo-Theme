@@ -1,0 +1,22 @@
+{{ define "content" }}
+<div class="title">
+    <h1>{{ .Title }}</h1>
+    <div class="subtitle">
+        {{.Content}}
+    </div>
+    <hr />
+</div>
+<article class="article">
+    <ul class="terms">
+        {{ range $key, $value := .Data.Terms }}
+        <li>
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="{{ (print " /" $.Data.Plural "/" $key | urlize) | relURL }}">
+                {{ $key }}
+            </a>
+            ({{ len $value }})
+        </li>
+        {{ end }}
+    </ul>
+</article>
+{{ end }}

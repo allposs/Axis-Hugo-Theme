@@ -1,0 +1,54 @@
+{{ $.Scratch.Set "section" (replaceRE "^/([^/]+)/.*" "$1" .Params.url ) }}
+<div class="intro-and-nav" role="banner">
+    <div>
+        <div class="intro">
+            <a class="logo" href="/" aria-label="{{ .Site.Params.menu.Title }}">
+                <img src="{{ .Site.Params.menu.logo | absURL }}" alt="">
+            </a>
+            <p class="library-desc">
+                {{ with .Site.Params.menu.subtitle }}
+                {{ . | markdownify }}
+                {{ end }}
+            </p>
+        </div>
+        <div>
+            <hr />
+            <nav id="patterns-nav" class="patterns" role="navigation">
+                <button id="menu-button" aria-expanded="false">
+                    {{ .Site.Params.menu.name }}
+                </button>
+                {{ $current := . }}
+                <ul id="patterns-list">
+                    {{ range (default .Site.Menus.main (index .Site.Menus ($.Scratch.Get "section"))) }}
+                    <li class="pattern">
+                        {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+                        {{ $active = or $active (eq .Name $current.Title) }}
+                        <a href="{{ .URL }}" {{ if $active }} aria-current="page" {{ end }}>
+                            {{ .Name }}
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+        <div class="ext">
+            <hr />
+            <ul>
+                {{ with .Site.Params.github }}
+                <li class="button">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                    <a href="{{.}}" target="_blank">Github</a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.email }}
+                <li class="text">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span class="fa">{{.}}</span>
+                </li>
+                {{ end }}
+            </ul>
+            <hr />
+        </div>
+
+    </div>
+</div>

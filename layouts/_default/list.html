@@ -1,0 +1,29 @@
+{{ define "content" }}
+<div class="title">
+    <h1>{{ .Title }}</h1>
+    <div class="subtitle">
+        {{.Content}}
+    </div>
+    <hr />
+</div>
+<article class="article">
+    <div class="list">
+        {{ range .Pages.GroupByDate "2006" }}
+        <div class="group">
+            <div class="title">
+                <h2>{{ .Key }}</h2>
+                <h4> ({{ .Pages | len }})</h4>
+            </div>
+            <ul>
+                {{ range .Pages }}
+                <li>
+                    <a href="{{ .RelPermalink }}"> <span class="date">[ {{ .Date.Format "2006/01/02" }} ]</span> -- {{
+                        .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+    </div>
+</article>
+{{ end }}

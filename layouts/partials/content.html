@@ -1,0 +1,42 @@
+{{ if eq .Params.type "docs" }}
+<div class="title">
+    <h1>{{ .Title }}</h1>
+    <div class="tags">
+        <i class="fa fa-tags" aria-hidden="true">
+            <span>
+                {{ if .Params.date }}{{ .Date.Format "2006-01-02" }}{{ end }}
+            </span>
+        </i>
+        {{ range .Params.tags }}
+        <i class="fa fa-tags" aria-hidden="true">
+            <span>
+                {{ . }}
+            </span>
+        </i>
+        {{end}}
+    </div>
+    <hr />
+</div>
+<div class="docs">
+    <article class="article">
+        {{ if .Content }}
+        {{ .Content }}
+        {{end}}
+        <hr />
+        {{ partial "disqus.html" . }}
+    </article>
+    <aside class="aside">
+        <h2>目录</h2>
+        {{ .TableOfContents }}
+
+    </aside>
+</div>
+{{ else }}
+<div class="other">
+    <article class="article">
+        {{ if .Content }}
+        {{ .Content }}
+        {{end}}
+    </article>
+</div>
+{{ end }}
