@@ -375,11 +375,17 @@ tr:nth-child(even) {
     border-left: none;
     min-height: auto;
   }
+  .content .docs .aside {
+    display: none;
+  }
 }
 
 /* Landscape phone screens and smaller */
 
 @media screen and (max-width: 720px) {
+  .content .docs .aside {
+    display: none;
+  }
 }
 
 /* Portrait phone screens */
