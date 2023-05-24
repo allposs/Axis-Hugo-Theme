@@ -7,17 +7,24 @@
     <hr />
 </div>
 <article class="article">
-    {{ range (where (where .Site.Pages "Type" "in" "posts,docs") "Kind" "page").GroupByDate "2006" }}
-    <h2>{{ .Key }}</h2>
-    <ul>
-        {{ range .Pages }}
-        <li>
-
-            <a href=" {{ .Permalink }}"><span class="date">[ {{ .Lastmod.Format "2006/01/02" }} ]</span> -- {{ .Title
-                }}</a>
-        </li>
+    <div class="list">
+        {{ range (where (where .Site.Pages "Type" "in" "posts,docs") "Kind" "page").GroupByDate "2006" }}
+        <div class="group">
+            <div class="title">
+                <h2>{{ .Key }}</h2>
+                <h4> ({{ .Pages | len }})</h4>
+            </div>
+            <ul>
+                {{ range .Pages }}
+                <li>
+                    <a href=" {{ .Permalink }}">
+                        <span class="date">[ {{ .Lastmod.Format "2006/01/02" }} ]</span> -- {{ .Title }}
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
         {{ end }}
-    </ul>
-    {{ end }}
+    </div>
 </article>
 {{ end }}
