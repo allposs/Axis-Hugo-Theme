@@ -212,17 +212,19 @@ hr {
   width: 100%;
   display: flex;
 }
+
 .content .docs .article {
-  width: 80%;
+  width: calc(100% - 250px);
 }
 .content .docs .aside {
   font-size: 1rem;
   border: 1px solid;
   position: fixed;
-  left: calc(100% - 300px);
+  left: calc(100% - 250px);
+  right: 0px;
 }
 #TableOfContents {
-  min-width: 250px;
+  max-width: 250px;
   padding: 0 10px 0 10px;
 }
 
