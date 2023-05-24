@@ -23,6 +23,7 @@
                     <li class="pattern">
                         {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
                         {{ $active = or $active (eq .Name $current.Title) }}
+                        {{ $active = or $active ( strings.Contains .URL $current.Params.type ) }}
                         <a href="{{ .URL }}" {{ if $active }} aria-current="page" {{ end }}>
                             {{ .Name }}
                         </a>

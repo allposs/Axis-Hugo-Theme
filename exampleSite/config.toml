@@ -19,6 +19,7 @@ enableGitInfo = false
 publishDir = "html"
 disqusShortname = 'allposs'
 
+#注意文档里的类型与页面会有匹配关系，也就是当页面类型为docs，菜单路径里有docs的会被激活
 [[menu.main]]
     name = "首页"
     url = "/"
