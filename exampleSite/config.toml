@@ -7,7 +7,7 @@ languageCode = "zh-cn"
 DefaultContentLanguage = "zh-cn"   	 
 title = "allposs博客"
 theme = "axis"
-#googleAnalytics = "UA-112592341-1"
+googleAnalytics = "G-NBF4J7F6RW"
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 # .WordCount works correctly for chinese
 hasCJKLanguage = true                             
@@ -55,7 +55,8 @@ disqusShortname = 'allposs'
     fancybox    = true
 
     loadTypekit = false	
-    baiduSiteVerificateID = "code-HxM5pCr1nD"   # 百度搜索资源平台HTML标签验证码
+    # 百度搜索资源平台HTML标签验证码
+    baiduSiteVerificateID = "code-HxM5pCr1nD"   
 
 # 菜单参数
 [params.menu]
