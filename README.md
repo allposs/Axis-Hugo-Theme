@@ -7,7 +7,7 @@
 ```shell
 $ mkdir themes
 $ cd themes
-$ git clone https://github.com/allposs/axis.git themes/axis
+$ git clone https://github.com/allposs/Axis-Hugo-Theme.gitt themes/axis
 ```
 关于hugo请查看[Hugo Quickstart Guide](https//gohugo.io/overview/quickstart/)。
 
