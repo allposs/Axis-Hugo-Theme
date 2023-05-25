@@ -69,5 +69,6 @@ disqusShortname = 'allposs'
 
 # footer参数
 [params.footer]
-    copyright = ""
+    copyright = "&copy; Powered by [Axis-Hugo-Theme](https://github.com/allposs/Axis-Hugo-Theme.git) and [Hugo](https://gohugo.io) | 2022 - {year} | [粤ICP备16023717号](http://beian.miit.gov.cn/)"
     moreinfo = ""
+

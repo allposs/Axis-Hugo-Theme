@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
     <div class="copyright">
         {{ with .Site.Params.footer.moreinfo }}
         {{ . | markdownify }}
@@ -7,7 +7,6 @@
         {{ replace . "{year}" now.Year | markdownify }}
         {{ end }}
     </div>
-
 </footer>
 {{ template "_internal/google_analytics.html" . }}
 
